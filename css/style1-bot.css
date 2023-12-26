@@ -1,0 +1,135 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #252525; /* Color de fondo de toda la página */
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Personalización del navbar */
+.navbar {
+    font-size: 20px;
+    background-color: rgba(36, 36, 36, 0.5); /* Color de fondo con opacidad */
+    backdrop-filter: blur(60px); /* Efecto de difuminado */
+    border: none; /* Quitamos el borde */
+    overflow-x: hidden;
+}
+
+/* Cambiar el color del texto en el navbar a blanco */
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+/* Cambiar el color del texto en el navbar al pasar el ratón */
+.navbar-default .navbar-nav>li>a:hover {
+    color: #ccc;
+}
+
+/* Cambiar el color del enlace activo */
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent;
+    color: white;
+}
+
+
+#audio-player {
+    position: fixed;
+    z-index: 100;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    /* background-color: #3f3f3f; */
+    backdrop-filter: blur(20px);
+    border: 1px solid #2c2c2c;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#audio-player p {
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+#audio-player p {
+    color: rgb(133, 133, 133);
+    font-size: 0.7rem;
+}
+
+#song-image {
+    max-width: 100%;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+
+audio {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#estado-bot {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+
+footer.nb-footer {
+    background: #222;
+    border-top: 4px solid #00ffbb; }
+    footer.nb-footer .about {
+    margin: 0 auto;
+    margin-top: 40px;
+    max-width: 1170px;
+    text-align: center; }
+    footer.nb-footer .about p {
+    font-size: 13px;
+    color: #999;
+    margin-top: 30px; }
+    footer.nb-footer .about .social-media {
+    margin-top: 15px; }
+    footer.nb-footer .about .social-media ul li a {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 50%;
+    font-size: 16px;
+    color: #00ffbb;
+    border: 1px solid rgba(255, 255, 255, 0.3); }
+    footer.nb-footer .about .social-media ul li a:hover {
+    background: #00ffbb18;
+    color: #fff;
+    border-color: #00ffbb; }
+    footer.nb-footer .footer-info-single {
+    margin-top: 30px; }
+    footer.nb-footer .footer-info-single .title {
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-left: 4px solid #00ffbb;
+    padding-left: 5px; }
+    footer.nb-footer .footer-info-single ul li a {
+    display: block;
+    color: #aaa;
+    padding: 2px 0; }
+    footer.nb-footer .footer-info-single ul li a:hover {
+    color: #00ffbb; }
+    footer.nb-footer .footer-info-single p {
+    font-size: 13px;
+    line-height: 20px;
+    color: #aaa; }
+    footer.nb-footer .copyright {
+    margin-top: 15px;
+    background: #111;
+    padding: 7px 0;
+    color: #999; }
+    footer.nb-footer .copyright p {
+    margin: 0;
+    padding: 0; }
