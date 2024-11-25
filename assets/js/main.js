@@ -50,7 +50,7 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-moo
 if (!selectedTheme) {
     document.body.classList.add(darkTheme); // Activar modo oscuro por defecto
     themeButton.classList.add(iconTheme);
-    headerImage.src = '../assets/img/nv-blanco.png'; // Imagen modo oscuro por defecto
+    headerImage.src = './assets/img/nv-blanco.png'; // Imagen modo oscuro por defecto
     localStorage.setItem('selected-theme', 'dark');
     localStorage.setItem('selected-icon', 'bx-moon');
 } else {
