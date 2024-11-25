@@ -1,14 +1,25 @@
-@media screen and (min-width: 2560px){
+@media screen and (min-width: 768px){
   body{
     margin: 0;
+    overflow-x: hidden;
   }
 
   .nav__list{
     display: flex;
+    padding-right: 150px;
+  }
+
+  /* Ajusta el tamaño de la imagen del header */
+  #header-img {
+    width: 100px;
+    height: 30px;
+    position: left;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
   }
 
   .nav{
     height: calc(var(--header-height) + 1.5rem);
+
   }
 
   .nav__toggle{
@@ -38,6 +49,9 @@
   }
 
   /********************************* End Of Part 3****************************************/
+
+}
+@media screen and (min-width: 2500px){
   .services__container,
   .menu__container{
     margin-top: var(--mb-6);
@@ -57,9 +71,8 @@
   .app__store{
     margin: 0 var(--mb-1) 0 0;
   }
-
+  
 }
-
 
 
 @media screen and (min-width: 960px){

@@ -23,10 +23,10 @@ a{
   text-decoration: none;
 }
 
-/* Ajusta el tamaño de la imagen del header */
 #header-img {
   width: 100px;
   height: 30px;
+  position: left;
   object-fit: cover; /* Asegura que la imagen no se deforme */
 }
 
@@ -584,6 +584,7 @@ body.dark-theme{
   position: relative;
   width: 300px;
   height: 200px;
+  margin-left: 50px;
 }
 
 .music .bar {
@@ -693,3 +694,34 @@ body.dark-theme{
 }
 
 /* Estilo para la X */
+
+
+/* *************************************** Comandos ******************************** */
+
+.container__commands {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  padding: 20px;
+  gap: 20px;
+}
+
+.box {
+  width: 90%;
+  max-width: 1000px;
+  padding: 10px;
+  border: 2px solid #001a2f;
+  border-radius: 10px;
+  background-color: #000f5c;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+.box h3 {
+  margin: 0 0 10px;
+  color: #979797;
+}
+.box p {
+  margin: 0;
+  color: #e9e9e9;
+}
