@@ -60,8 +60,8 @@ if (!selectedTheme) {
 
     // Cambiar la imagen según el tema almacenado
     headerImage.src = selectedTheme === 'dark' 
-        ? '../assets/img/nv-blanco.png' 
-        : '../assets/img/nv-negro.png';
+        ? './assets/img/nv-blanco.png' 
+        : './assets/img/nv-negro.png';
 }
 
 // Activate / deactivate the theme manually with the button
@@ -72,9 +72,9 @@ themeButton.addEventListener('click', () => {
 
     // Cambiar la imagen según el tema actual
     if (document.body.classList.contains(darkTheme)) {
-        headerImage.src = '../assets/img/nv-blanco.png';
+        headerImage.src = './assets/img/nv-blanco.png';
     } else {
-        headerImage.src = '../assets/img/nv-negro.png';
+        headerImage.src = './assets/img/nv-negro.png';
     }
 
     // We save the theme and the current icon that the user chose
