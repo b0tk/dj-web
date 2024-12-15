@@ -36,7 +36,8 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
 const iconTheme = 'bx-sun';
-const headerImage = document.getElementById('header-img'); // Seleccionamos el img con id header-img
+const headerImage = document.getElementById('header-img'); // Imagen en el encabezado
+const footerImage = document.getElementById('footer-img'); // Imagen en el pie de página
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem('selected-theme');
@@ -50,8 +51,9 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bx-moo
 if (!selectedTheme) {
     document.body.classList.add(darkTheme); // Activar modo oscuro por defecto
     themeButton.classList.add(iconTheme);
-    headerImage.src = './assets/img/nv-blanco.png';
-    headerImage.src = '../assets/img/nv-blanco.png';// Imagen modo oscuro por defecto
+    // Establecer las imágenes predeterminadas para el modo oscuro
+    headerImage.src = './assets/img/media2.0/img2.0/N-com.png';
+    footerImage.src = './assets/img/media2.0/img2.0/B-footer.png'; // Imagen para el pie de página en modo oscuro
     localStorage.setItem('selected-theme', 'dark');
     localStorage.setItem('selected-icon', 'bx-moon');
 } else {
@@ -61,8 +63,11 @@ if (!selectedTheme) {
 
     // Cambiar la imagen según el tema almacenado
     headerImage.src = selectedTheme === 'dark' 
-        ? './assets/img/nv-blanco.png' 
-        : './assets/img/nv-negro.png';
+        ? './assets/img/media2.0/img2.0/N-com.png' 
+        : './assets/img/media2.0/img2.0/B-com.png';
+    footerImage.src = selectedTheme === 'dark' 
+        ? './assets/img/media2.0/img2.0/N-com.png' 
+        : './assets/img/media2.0/img2.0/B-footer.png'; // Imagen para el pie de página según el tema almacenado
 }
 
 // Activate / deactivate the theme manually with the button
@@ -71,17 +76,21 @@ themeButton.addEventListener('click', () => {
     document.body.classList.toggle(darkTheme);
     themeButton.classList.toggle(iconTheme);
 
-    // Cambiar la imagen según el tema actual
+    // Cambiar las imágenes según el tema actual
     if (document.body.classList.contains(darkTheme)) {
-        headerImage.src = './assets/img/nv-blanco.png';
+        headerImage.src = './assets/img/media2.0/img2.0/N-com.png'; // Imagen para el encabezado en modo oscuro
+        footerImage.src = './assets/img/media2.0/img2.0/N-footer.png'; // Imagen para el pie de página en modo oscuro
     } else {
-        headerImage.src = './assets/img/nv-negro.png';
+        headerImage.src = './assets/img/media2.0/img2.0/B-com.png'; // Imagen para el encabezado en modo claro
+        footerImage.src = './assets/img/media2.0/img2.0/B-footer.png'; // Imagen para el pie de página en modo claro
     }
+    
 
     // We save the theme and the current icon that the user chose
     localStorage.setItem('selected-theme', getCurrentTheme());
     localStorage.setItem('selected-icon', getCurrentIcon());
 });
+
 
 
 /*==================== Show Top Scroll ====================*/ 
