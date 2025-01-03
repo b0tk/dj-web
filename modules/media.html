@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/1162263699256508467/1323069126327144559/N-icon.png?ex=67791a65&is=6777c8e5&hm=b43fee96e2ef524371db2098bd349e9264ff42953b997df3745ca1b892fa4a9f&" type="image/x-icon">
+    <title>NovuVitae social</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #080808, #242424);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .link {
+            text-decoration: none;
+            color: #080808;
+            background: #00ffbb;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+
+        .link:hover {
+            background: #0078ff;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Siguenos en</h1>
+    <div class="links">
+
+        <a class="link" href="https://www.instagram.com/novuvitae/" target="_blank">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a class="link" href="https://twitter.com/NovuVitae" target="_blank">
+            <i class="fab fa-twitter"></i> Twitter
+        </a>
+        <a class="link" href="https://b0tk.github.io/dj-web/" target="_blank">
+            <i class="fab fa-discord"></i> Utiliza nuestro bot en tu discord
+        </a>
+        <!-- <iframe src="https://discord.com/widget?id=779522320808804383&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe> -->
+        <div style="border: 1px solid #2c2f33; background-color: #2c2f33; padding: 20px; border-radius: 8px; width: 350px; color: white; font-family: Arial, sans-serif;">
+            <a href="https://discord.gg/BMdVRYudak" target="_blank" style="text-decoration: none; color: white;">
+                <img src="https://cdn.discordapp.com/attachments/1162263699256508467/1324718568658567229/ds.jpg?ex=67792bce&is=6777da4e&hm=3eddcafffd56b6bb57549c4a7b3843f2834a4ed6a792ddec75893b0f82e1e041&" alt="Logo del servidor" style="width: 100px; border-radius: 8px; float: left; margin-right: 10px;">
+                <div>
+                    <strong>NovuVitae | NV-Labs</strong>
+                    <p style="margin: 5px 0;">
+                        <span id="online-users">Cargando...</span> en línea · 
+                        <span id="total-members">+150</span> miembros
+                    </p>
+                </div>
+                <div style="text-align: right; margin-top: 10px;">
+                    <button style="background-color: #00ffbb; color: #080808; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Únete</button>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        Made with ❤️ | NovuVitae devs
+    </div>
+    <script>
+        const SERVER_ID = "779522320808804383";
+        const API_URL = `https://discord.com/api/guilds/${SERVER_ID}/widget.json`;
+        const onlineUsersElement = document.getElementById("online-users");
+        async function fetchDiscordData() {
+            try {
+                const response = await fetch(API_URL);
+                const data = await response.json();
+
+                onlineUsersElement.textContent = data.presence_count;
+            } catch (error) {
+                console.error("Error al obtener los datos del servidor:", error);
+                onlineUsersElement.textContent = "Error";
+            }
+        }
+
+        fetchDiscordData();
+
+        setInterval(fetchDiscordData, 30000);
+    </script>
+</body>
+</html>
